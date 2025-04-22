@@ -1,4 +1,6 @@
 print ("Hola, introduzca su edad")
 edad=int(input())
-if edad>17: print ("Usted es mayo de edad")
-if edad<18: print ("Usted es menor de edad")
+if edad>17: 
+    print ("Usted es mayo de edad")
+else:
+    print ("Usted es menor de edad")
