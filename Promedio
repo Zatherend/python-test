@@ -7,7 +7,7 @@ print ("Escriba otra nota")
 n3=float(input())
 suma=n1+n2+n3
 prom=suma/3
-print ("Su promedio es ", prom)
+print ("Su promedio es ", round(prom,1))
 if prom>float(3.9): 
     print ("Usted aprobó")
 else:
