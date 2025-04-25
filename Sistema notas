@@ -1,0 +1,84 @@
+import time
+import os
+
+# Definición de variables
+contra = "1234"
+
+# Inicio del programa
+print("********SISTEMA DE NOTAS********")
+usuario = input("Ingrese su usuario: ")
+print(f"Bienvenido {usuario}")
+time.sleep(3)
+os.system("cls" if os.name == "nt" else "clear")
+clave = input("Digite su clave de 4 dígitos: ")
+print ("Clave correcta!")
+time.sleep(3)
+os.system("cls" if os.name == "nt" else "clear")
+
+while clave != contra:
+    print("Error, digite la contraseña correcta")
+    clave = input("Digite su clave de 4 dígitos: ")
+
+print("********Bienvenido al sistema********")
+
+# Despliegue del sistema
+op = ""
+while op != "3":
+    print("\n¿Qué acción desea ejecutar?")
+    print("1.- Cálculo de promedio")
+    print("2.- Revisión de notas")
+    print("3.- Salir del sistema")
+    time.sleep(1)
+
+    op = input("Seleccione una opción: ")
+
+    if op == "1":
+   # Solicitar la cantidad de alumnos
+cantn=int(input("¿Cuántos alumnos son? "))
+
+# Recorremos cada alumno
+for i in range(1, cantn + 1):
+    print(f"Notas del alumno {i}")
+    cNotas = int(input("¿Cuántas notas son? "))
+    suma = 0
+
+    # Recorremos cada nota del alumno
+    for j in range(1, cNotas + 1):
+        n1 = float(input(f"Ingrese la nota número {j}: "))
+        suma += n1
+        prom1 = suma / j
+        print(f"El promedio del alumno {i} hasta la nota {j} es {prom1:.2f}")
+
+        # Verificamos si el alumno está aprobando o reprobando
+        if prom1 < 4:
+            print("El alumno está reprobando")
+        else:
+            print("El alumno está aprobando")
+
+    # Calculamos el promedio final del alumno
+    prom = suma / cNotas
+    print(f"El promedio final del alumno {i} es {prom:.2f}")
+
+    # Verificamos si el alumno aprobó o reprobó
+    if prom < 4:
+        print("Reprobó")
+    else:
+        print("Felicidades, aprobó")
+
+
+
+    elif op == "2":
+        print("Todavía no implementado")
+
+    elif op == "3":
+        print("Saliendo del sistema")
+        time.sleep(1)
+        print("*")
+        time.sleep(1)
+        print("*")
+        time.sleep(1)
+        print("*")
+        time.sleep(1)
+
+    else:
+        print("Error, seleccione una opción válida")
